@@ -27,7 +27,7 @@ const mixedArr = [valid2, mystery1, valid3, mystery2, invalid1, invalid5, myster
 
 
 // Add your functions below:
-export const validateCred = (arr) => {
+const validateCred = (arr) => {
   // returns bool using Luhn algorithm
   const copyOfArr = arr.slice();
   const doubleNumbers = (arr) => {
@@ -48,13 +48,13 @@ export const validateCred = (arr) => {
   return sum % 10 === 0;
 }
 
-export const findInvalidCards = (nestedArr) => {
+const findInvalidCards = (nestedArr) => {
   // returns a nested array of invalid cards
   const invalidNestedArr = nestedArr.filter(arr => !validateCred(arr));
   return invalidNestedArr;
 }
 
-export const idInvalidCardCompanies = (nestedArr) => {
+const idInvalidCardCompanies = (nestedArr) => {
   // returns an array of companies with no duplicates
   const companiesArr = [];
   nestedArr.forEach(arr => {
@@ -78,6 +78,7 @@ export const idInvalidCardCompanies = (nestedArr) => {
   return Array.from(new Set(companiesArr));
 }
 
+// tests
 console.log(validateCred(mystery1)); //should print false
 const invArr = findInvalidCards(mixedArr);
 console.log(invArr); // should print a nested array of invalid card numbers
@@ -86,3 +87,6 @@ console.log(idInvalidCardCompanies([invalid1])); // should print['Visa']
 console.log(idInvalidCardCompanies([invalid2])); // should print ['Mastercard']
 console.log(idInvalidCardCompanies([mystery6])); // should print an empty array and 'Company not found'
 console.log(idInvalidCardCompanies(batch)); // should print an array of unique credit company names and 'Company not found'
+// end of tests
+
+module.exports = { validateCred, findInvalidCards, idInvalidCardCompanies };
