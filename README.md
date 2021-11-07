@@ -1,6 +1,6 @@
 # Credit Card Validator
 
-Uses **((Luhn algorithm https://en.wikipedia.org/wiki/Luhn_algorithm))** to check validity of credit card numbers.
+Uses ((https://en.wikipedia.org/wiki/Luhn_algorithm Luhn algorithm)) to check validity of credit card numbers.
 
 ES6.
 List of methods:
